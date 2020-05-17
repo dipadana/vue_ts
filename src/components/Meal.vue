@@ -1,13 +1,24 @@
 <template>
-  <div class="hello">
-    <p style="font-weight: bold;">
-      {{ meal[0].strMeal }}
-    </p>
-    <div>
-      <img :src="meal[0].strMealThumb" alt="">
-    </div>
-    <div style="margin-top: 16px;">
-      <button @click="fetchData()">Refresh</button>
+  <div class="hello flex flex-center">
+    <div class="col-12 col-sm-10 col-md-8">
+      <q-card class="full-width">
+        <q-img
+          :src="meal[0].strMealThumb"
+          :ratio="16/9"
+        />
+        <q-card-section>
+          <div class="text-h6">{{ meal[0].strMeal }}</div>
+        </q-card-section>
+        <q-separator/>
+        <q-card-actions class="bg-grey-2">
+          <q-btn
+            flat
+            color="primary"
+            label="Refresh"
+            @click="fetchData()"
+          />
+        </q-card-actions>
+      </q-card>
     </div>
   </div>
 </template>
